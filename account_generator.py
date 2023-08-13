@@ -4,6 +4,7 @@ import warnings
 import string
 
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium import webdriver
 import requests
@@ -35,7 +36,7 @@ class RiotGen():
         options.add_argument('--ignore-certificate-errors')
         options.add_argument('--ignore-ssl-errors')
         options.headless = False
-        self.driver = webdriver.Chrome(options=options, executable_path=ChromeDriverManager(version="114.0.5735.16").install())
+        self.driver = webdriver.Chrome(options=options, service=Service(ChromeDriverManager().install()))
 
     def login(self):
         name = generate_name()
