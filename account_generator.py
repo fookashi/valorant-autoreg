@@ -66,7 +66,3 @@ class RiotGen():
         next_btn = self.driver.find_element(by=By.XPATH, value='/html/body/div[2]/div/div/div[2]/div/div[2]/form/div/button')
         self.driver.execute_script("arguments[0].click();", next_btn)
 
-
-rg=RiotGen()
-while True:
-    rg.login()
